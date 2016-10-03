@@ -6,6 +6,10 @@
     "name": "Leon Pearce",
     "email": "leonp1991@gmail.com"
   },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/leonp1991/ReRe.git"
+  },
   "license": "ISC",
   "bin": {
     "rere": "./package/index.js"
