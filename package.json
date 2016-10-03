@@ -1,0 +1,21 @@
+{
+  "name": "rere",
+  "version": "1.0.0",
+  "description": "a react boiler plate generator",
+  "contributors": {
+    "name": "Leon Pearce",
+    "email": "leonp1991@gmail.com"
+  },
+  "license": "ISC",
+  "bin": {
+    "rere": "./package/index.js"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "ejs": "^2.5.2"
+  }
+}

@@ -1,0 +1,21 @@
+# Ignore build folder
+/build
+
+
+# Ignore temp folders
+/tools/test/temp
+/.nyc_output
+
+
+# Ignore module dependancies
+/node_modules
+
+
+# Ignore logs
+/.npm-debug.log
+
+
+# Ignore personal config files
+.tern-project
+.idea
+.DS_store

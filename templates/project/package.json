@@ -1,0 +1,80 @@
+{
+  "name": "<%- name %>",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.jsx",
+  "contributors": {
+    "name": "Leon Pearce",
+    "email": "leonp1991@gmail.com"
+  },
+  "license": "",
+  "scripts": {
+    "start": "node ./tools/start",
+    "test": "node ./tools/test",
+    "test:once": "node ./tools/test/once",
+    "test:ci": "node ./tools/test/ci",
+    "lint": "node ./tools/lint",
+    "lint:fix": "node ./tools/lint/fix",
+    "doc": "node ./tools/doc",
+    "doc:once": "node ./tools/doc/once",
+    "build": "node ./tools/build",
+    "open": "node /tools/open",
+    "open:test": "node ./tools/open/test",
+    "open:api": "node ./tools/open/api",
+    "deploy": "node ./tools/deploy"
+  },
+  "nyc": {
+    "report-dir": "./docs/test",
+    "extension": [
+      ".js",
+      ".jsx"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "statements": 80,
+    "functions": 80,
+    "branches": 80,
+    "lines": 80
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-latest": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "css-loader": "^0.25.0",
+    "enzyme": "^2.4.1",
+    "esdoc": "^0.4.8",
+    "esdoc-es7-plugin": "0.0.3",
+    "eslint": "^3.5.0",
+    "eslint-plugin-react": "^6.3.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "jsdom": "^9.5.0",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.9.3",
+    "nyc": "^8.1.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "stylelint": "^7.2.0",
+    "stylelint-config-standard": "^13.0.0",
+    "watch": "^0.19.2",
+    "webpack": "^1.13.2",
+    "webpack-dashboard": "^0.1.8",
+    "webpack-dev-server": "^1.15.1",
+    "webpack-node-externals": "^1.4.3"
+  },
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-router": "^2.8.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
+    "redux-immutable": "^3.0.8",
+    "redux-thunk": "^2.1.0"
+  }
+}
