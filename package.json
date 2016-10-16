@@ -2,6 +2,15 @@
   "name": "rere-gen",
   "version": "1.0.4",
   "description": "a react boiler plate generator",
+  "keywords": [
+    "react",
+    "redux",
+    "template",
+    "cli",
+    "tool",
+    "boiler",
+    "generate"
+  ],
   "contributors": [
     {
       "name": "Leon Pearce",
@@ -12,10 +21,11 @@
     "type": "git",
     "url": "https://github.com/leonp1991/ReRe.git"
   },
-  "license": "ISC",
-  "bin": {
-    "rere": "./package/index.js"
+  "bugs": {
+    "url" : "https://github.com/leonp1991/ReRe/issues",
+    "email" : "leonp1991@gmail.com"
   },
+  "license": "ISC",
   "devDependencies": {
     "ava": "^0.16.0"
   },
@@ -23,5 +33,9 @@
     "chalk": "^1.1.3",
     "commander": "^2.9.0",
     "ejs": "^2.5.2"
-  }
+  },
+  "bin": {
+    "rere": "./package/index.js"
+  },
+  "preferGlobal": true
 }
