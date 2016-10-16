@@ -59,5 +59,5 @@ This will create a new folder named after the module with files/folders for: act
 
 
 ### Want to contribute ???
-This would be an easy enough project to contribute to if your new to open source. Feel free to suggest changes to cli api,
-or even just gripes with templates and well see what we can do.
+This would be an easy enough project to contribute to if your new to open source. Feel free to suggest changes to the cli,
+or even just updates for the templates and well see what we can do.
