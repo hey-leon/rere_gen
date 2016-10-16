@@ -1,5 +1,7 @@
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const nodeExternals = require('webpack-node-externals');
 
+const extracted = new ExtractTextPlugin('bundle.css');
 const externals = nodeExternals();
 const config = {
   target: 'node',
@@ -24,6 +26,8 @@ const config = {
       '', '.js', '.jsx', '.json', '.scss',
     ],
   },
+  sassLoader: { includePaths: ['./node_modules'] },
+  plugins: [extracted],
   devtool: 'inline-source-map',
   externals: [externals],
 };
