@@ -1,7 +1,7 @@
 # ReRe - reactredux cli tool
 
-ReRe is a cli tool to for generating boiler-plate for a react-redux application. it also uses ejs to inject
-options to customise boiler documentation as such (currently just injects the name of components/modules).
+ReRe is a cli tool to for generating boiler plate code for a react-redux application. it also uses ejs to inject
+options to customise boiler documentation (currently just injects the name of components/modules).
 
 ## Installation
 
@@ -28,7 +28,7 @@ the store. the project also comes with a comprehensive set of scripts to manage 
  - comes with minimalist eslint + stylelint configurations.
 
 
-### Generate new pure components
+### Generate new pure component
 to generate a pure component (component that holds state, only renders on state/props update).
 
 ```sh
@@ -38,7 +38,7 @@ rere pure <name>
 This will create a new folder named after the component with files for: index.jsx (component), styles.scss, spec.jsx. All with relevent boiler.
 
 
-### Generate new pure components
+### Generate new stateless component
 to generate a stateless component (component that holds no state).
 
 ```sh
@@ -48,7 +48,7 @@ rere stateless <name>
 This will create a new folder named after the component with files for: index.jsx (component), styles.scss, spec.jsx. All with relevent boiler.
 
 
-### Generate redux logic modules
+### Generate redux logic module
 to generate a redux logic module.
 
 ```sh
