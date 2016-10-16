@@ -15,7 +15,7 @@ const config = {
       { test: /\.json$/, loader: 'json-loader' },
       {
         test: /\.s?css$/,
-        loaders: ['file?name=bundle.css', 'extract', 'css', 'sass'],
+        loaders: ExtractTextPlugin.extract('style', ['css?sourceMap', 'sass?sourceMap']),
       },
     ],
   },
