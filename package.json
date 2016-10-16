@@ -1,6 +1,6 @@
 {
   "name": "rere-gen",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "a react boiler plate generator",
   "keywords": [
     "react",
@@ -22,8 +22,8 @@
     "url": "https://github.com/leonp1991/ReRe.git"
   },
   "bugs": {
-    "url" : "https://github.com/leonp1991/ReRe/issues",
-    "email" : "leonp1991@gmail.com"
+    "url": "https://github.com/leonp1991/ReRe/issues",
+    "email": "leonp1991@gmail.com"
   },
   "license": "ISC",
   "devDependencies": {
