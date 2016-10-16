@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.jsx",
-  "contributors": {
-    "name": "Leon Pearce",
-    "email": "leonp1991@gmail.com"
-  },
+  "contributors": [
+    ""
+  ],
   "license": "",
   "scripts": {
     "start": "node ./tools/start",

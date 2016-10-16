@@ -11,7 +11,7 @@ npm i -D rere-gen
 
 ## Usage
 
-### Generete new project
+### Generate new project
 
 to kick start a new project navigate to the dir to create in and enter:
 
@@ -21,6 +21,11 @@ rere project <name>
 
 This will generate a project with react redux and all the general boiler needed to mount the application and attach
 the store. the project also comes with a comprehensive set of scripts to manage your dev flow.
+
+ - webpack for compilation.
+ - avajs + enzyme for testing. If your used to mocha learn ava :).
+ - includes nyc (istanbul) for test coverage.
+ - comes with minimalist eslint + stylelint configurations.
 
 
 ### Generate new pure components
@@ -51,3 +56,8 @@ rere logic <name>
 ```
 
 This will create a new folder named after the module with files/folders for: actions, reducers, core, and specs. 
+
+
+### Want to contribute ???
+This would be an easy enough project to contribute to if your new to open source. Feel free to suggest changes to cli api,
+or even just gripes with templates and well see what we can do.
