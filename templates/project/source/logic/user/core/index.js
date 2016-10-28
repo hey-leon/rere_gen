@@ -4,17 +4,39 @@
 import { Map, fromJS } from 'immutable';
 
 
-
 /**
- * TODO: specify the necessary initial state of user
  * @type {Map} initialState of user
  */
-export const initialState = new Map();
+export function userInit() {
+  return new Map();
+}
 
 
 /**
- * TODO: specify the necessary state operations of user
  * @type {Function} stateSet example operation
  */
-export const stateSet = (state, { field, val }) =>
-  state.set(field, val);
+export function userSet(state, { newState }) {
+  return fromJS(newState);
+}
+
+
+/**
+ * @type {Function} stateSet example operation
+ */
+export function userSetIn(state, { namespace, segment }) {
+  const path =
+    typeof namespace === Array ? namespace : [namespace];
+
+  return state.setIn(path, fromJS(segment));
+}
+
+
+/**
+ * @type {Function} stateSet example operation
+ */
+export function userMergeIn(state, { namespace, segment }) {
+  const path =
+    typeof namespace === Array ? namespace : [namespace];
+
+  return state.mergeDeepIn(path, fromJS(segment));
+}

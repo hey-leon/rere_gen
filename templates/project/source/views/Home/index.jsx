@@ -1,58 +1,32 @@
 /**
- * @module Home Component
+ * @module Home component
  */
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PropTypes } from 'react';
+import Anchor from 'views/Shared/Anchor';
 import styles from './styles';
 
+
 /**
- * @type {PureComponent} Home PureComponent
+ * @type {Function} Home Stateless Component
  */
-export class Home extends PureComponent {
-  /**
-   * TODO: specify initial state and bindings of Home
-   * executes on instantiation
-   */
-  constructor(props) {
-    super(props)
-    //
-  }
-
-
-  /**
-   * TODO: specify setup of Home
-   * executes post mount
-   */
-  componentDidMount() {
-    //
-  }
-
-
-  /**
-   * TODO: specify cleanup of Home
-   * executes pre unmount
-   */
-  componentWillMount() {
-    //
-  }
-
-  /**
-   * TODO: specify design of Home
-   * executes on render
-   */
-  render() {
-    return (
-      <div>Hello World, from ReRe :)</div>
-    );
-  }
+export function Home (props) {
+  const { userFakeLogOut } = props;
+  return (
+    <div className={styles.Home}>
+      <h1>You are now in a authorised area</h1>
+      <Anchor onClick={userFakeLogOut} to="/Welcome">
+        Log Your Fake User Out...
+      </Anchor>
+    </div>
+  );
 }
 
 
 /**
- * TODO: specify the component propTypes of Home
  * Home propTypes
  */
 Home.propTypes = {
-  //
+  userFakeLogOut: PropTypes.func,
 };
 
 

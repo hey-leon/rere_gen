@@ -6,10 +6,27 @@ options to customise boiler documentation (currently just injects the name of co
 ## Installation
 
 ```sh
-npm i -D rere-gen
+npm i -g rere-gen
 ```
 
-## Usage
+## Get Started in one line?
+```sh
+rere project <new project name> && cd $_ && npm i && npm start
+```
+
+## Goal of the project
+create a cli tool that helps speed up development of react/redux web apps.
+The project will attempt to keep up with the latest practices, post cherry
+picked by the contributors.
+
+the two main methods of keeping this package relevant are:
+
+- keeping the project template, up to standard with features desgined
+  to speed up development, and remove pain points.
+- provide easy cli features to generate module boiler for the project
+  that easily fit a growing project. 
+
+## CLI Usage
 
 ### Generate new project
 
@@ -22,10 +39,11 @@ rere project <name>
 This will generate a project with react redux and all the general boiler needed to mount the application and attach
 the store. the project also comes with a comprehensive set of scripts to manage your dev flow.
 
- - webpack for compilation.
+ - webpack 2 for compilation.
  - avajs + enzyme for testing. If your used to mocha learn ava :).
  - includes nyc (istanbul) for test coverage.
  - comes with minimalist eslint + stylelint configurations.
+ - baked in helpers, and good practices. see helpers/redux & libs/log in your new project
 
 
 ### Generate new pure component
@@ -56,6 +74,12 @@ rere logic <name>
 ```
 
 This will create a new folder named after the module with files/folders for: actions, reducers, core, and specs. 
+
+
+## Challenges of the project
+keeping the module generators, agnostic to the project template or
+an existic project. I would like to look into implementing a project
+rc file, and look at injecting helper dependencies.
 
 
 ### Want to contribute ???

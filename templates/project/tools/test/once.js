@@ -18,7 +18,7 @@ bundle(config)
 )
 .then(status => {
   process.exitCode = status;
-  return clean('.nyc_output')
+  return clean('.nyc_output');
 })
 .then(() => clean('tools/test/temp'))
 .catch(console.log);

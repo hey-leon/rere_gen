@@ -8,6 +8,7 @@
  */
 const { document, window, propogate } = require('./dom');
 
+
 global.document = document;
 global.window = window;
 global.navigator = {

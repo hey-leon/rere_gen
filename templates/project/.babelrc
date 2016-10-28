@@ -1,7 +1,14 @@
 {
   "presets": [
-    "latest",
+    ["latest", { "modules": false }],
     "react"
   ],
-  "plugins": ["transform-object-rest-spread"]
+  "plugins": [
+    "transform-object-rest-spread"
+  ],
+  "env": {
+    "development": {
+      "sourceMaps": "inline"
+    }
+  }
 }

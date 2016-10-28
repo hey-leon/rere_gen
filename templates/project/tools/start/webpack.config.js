@@ -1,32 +1,31 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractText = require('extract-text-webpack-plugin');
 const Dashboard = require('webpack-dashboard/plugin');
+const resolve = require('../webpack/resolve');
+const rules = require('../webpack/rules');
 
-const extracted = new ExtractTextPlugin('bundle.css');
+const extracted = new ExtractText('bundle.css');
 const dashboard = new Dashboard();
+
+
 const config = {
-  devtool: 'inline-source-map',
-  entry: [
-    'webpack-dev-server/client?http://localhost:8080/',
-    'webpack/hot/dev-server',
-    './source/main.jsx',
-  ],
-  module: {
-    loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
-      { test: /\.json$/, loader: 'json-loader' },
-      {
-        test: /\.s?css$/,
-        loader: ExtractTextPlugin.extract('style', ['css?sourceMap', 'sass?sourceMap']),
-      },
-    ],
+  target: 'web',
+
+  entry: ['babel-polyfill', './source/main.jsx'],
+
+  devServer: {
+    historyApiFallback: true,
+    contentBase: "build",
+    compress: true,
   },
-  resolve: {
-    extensions: [
-      '', '.js', '.jsx', '.json', '.scss',
-    ],
-  },
-  sassLoader: { includePaths: ['./node_modules'] },
+
+  module: { rules },
+  resolve,
+
   plugins: [extracted, dashboard],
+
+  devtool: 'inline-source-map',
+  
 };
+
 
 module.exports = config;

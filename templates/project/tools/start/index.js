@@ -12,11 +12,14 @@ const { run } = require('../libs');
 run('npm', ['run', 'build'])
 .then(() =>
   run('webpack-dashboard', [
-    '--',
-    'webpack-dev-server',
-    '--config',
-    `${__dirname}/webpack.config.js`,
-    '--content-base', 'build/',
-    '--hot', '--inline',
+
+    '--', 'webpack-dev-server',
+
+    '--config', `${__dirname}/webpack.config.js`,
+    '--host', '0.0.0.0',
+
+    '--inline',
+    '--hot',
+
   ])
 );

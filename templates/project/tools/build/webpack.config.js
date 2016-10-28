@@ -1,29 +1,35 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractText = require('extract-text-webpack-plugin');
+const resolve = require('../webpack/resolve');
+const rules = require('../webpack/rules');
+const webpack = require('webpack');
 
-const extracted = new ExtractTextPlugin('bundle.css');
+
+const optimize = new webpack.optimize.UglifyJsPlugin();
+const extracted = new ExtractText('bundle.css');
+const env = new webpack.DefinePlugin({
+  'process.env':{
+    'NODE_ENV': JSON.stringify('production'),
+  },
+})
+
+
 const config = {
-  entry: './source/main.jsx',
+  target: 'web',
+
+  entry: ['babel-polyfill', './source/main.jsx'],
   output: {
     path: 'build',
     filename: 'bundle.js',
   },
-  module: {
-    loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
-      { test: /\.json$/, loader: 'json-loader' },
-      {
-        test: /\.s?css$/,
-        loader: ExtractTextPlugin.extract('style', ['css?sourceMap', 'sass?sourceMap']),
-      },
-    ],
-  },
-  resolve: {
-    extensions: [
-      '', '.js', '.jsx', '.json', '.scss',
-    ],
-  },
-  sassLoader: { includePaths: ['./node_modules'] },
-  plugins: [extracted]
+
+  module: { rules },
+  resolve,
+
+  plugins: [extracted, optimize, env],
+
+  devtool: 'cheap-module-source-map',
+
 };
+
 
 module.exports = config;

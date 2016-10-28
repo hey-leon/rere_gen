@@ -1,35 +1,30 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const nodeExternals = require('webpack-node-externals');
+const ExtractText = require('extract-text-webpack-plugin');
+const externals = require('webpack-node-externals');
+const resolve = require('../webpack/resolve');
+const rules = require('../webpack/rules');
 
-const extracted = new ExtractTextPlugin('bundle.css');
-const externals = nodeExternals();
+const extracted = new ExtractText('bundle.css');
+const external = externals();
+
+
 const config = {
   target: 'node',
-  devtool: 'inline-source-map',
-  entry: `${__dirname}/setup.js`,
+
+  entry: ['babel-polyfill', `${__dirname}/setup.js`],
   output: {
     path: `${__dirname}/temp`,
     filename: 'tests.bundle.js',
   },
-  module: {
-    loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
-      { test: /\.json$/, loader: 'json-loader' },
-      {
-        test: /\.s?css$/,
-        loaders: ExtractTextPlugin.extract('style', ['css?sourceMap', 'sass?sourceMap']),
-      },
-    ],
-  },
-  resolve: {
-    extensions: [
-      '', '.js', '.jsx', '.json', '.scss',
-    ],
-  },
-  sassLoader: { includePaths: ['./node_modules'] },
+
+  module: { rules },
+  resolve,
+
+  externals: [external],
   plugins: [extracted],
+
   devtool: 'inline-source-map',
-  externals: [externals],
+
 };
+
 
 module.exports = config;

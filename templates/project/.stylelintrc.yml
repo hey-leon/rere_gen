@@ -6,3 +6,4 @@ rules:
     - true
     - ignorePseudoClasses:
       - "local"
+      - "global"

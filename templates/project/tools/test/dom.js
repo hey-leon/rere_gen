@@ -18,18 +18,14 @@ const window = document.defaultView;
  */
 function propogate(props, object) {
   Object.keys(props)
-    .forEach(key => {
-      if (props.hasOwnProperty(key) && !object[key]) {
-        object[key] = props[key];
-      }
-    });
+        .forEach(
+          key => {
+            if (props.hasOwnProperty(key) && !object[key]) {
+              object[key] = props[key];
+            }
+          }
+        );
 }
 
-module.exports = { document, window, propogate };
 
-/*
-eslint
-import/no-extraneous-dependencies: 0,
-no-prototype-builtins: 0,
-no-param-reassign: 0,
-*/
+module.exports = { document, window, propogate };
