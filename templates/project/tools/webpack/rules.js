@@ -35,7 +35,7 @@ const sass = {
 
 
 const styles = {
-  test: /\.scss$/,
+  test: /\.s?css$/,
   loader: ExtractText.extract({
     fallbackLoader: 'style-loader',
     loader: [css, sass],
