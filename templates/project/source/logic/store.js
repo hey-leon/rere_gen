@@ -13,7 +13,7 @@ import reducer from './reducer';
  */
 const { __REDUX_DEVTOOLS_EXTENSION__ : RDTE } = window;
 
-let devtools = f => f; // no-op
+let devtools = f => f; 
 if (
   process.env.NODE_ENV !== 'production'
   && typeof RDTE === 'function'
