@@ -7,8 +7,10 @@ const webpack = require('webpack');
 const optimize = new webpack.optimize.UglifyJsPlugin();
 const extracted = new ExtractText('bundle.css');
 const env = new webpack.DefinePlugin({
-  'process.env':{
-    'NODE_ENV': JSON.stringify('production'),
+  process: {
+    env:{
+      NODE_ENV: JSON.stringify('production'),
+    },
   },
 })
 
