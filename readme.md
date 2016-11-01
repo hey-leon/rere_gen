@@ -79,8 +79,7 @@ This will create a new folder named after the module with files/folders for: act
 
 
 ## Challenges of the project
-keeping the module generators, agnostic to the project template or
-an existic project. I would like to look into implementing a project
+keeping the module generators, agnostic to the project template and existing projects. I would like to look into implementing a project
 rc file, and look at injecting helper dependencies.
 
 
