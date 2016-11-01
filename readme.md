@@ -1,3 +1,5 @@
+[![Known Vulnerabilities](https://snyk.io/test/npm/rere-gen/badge.svg)](https://snyk.io/test/npm/rere-gen)
+
 # ReRe - reactredux cli tool
 
 ReRe is a cli tool to for generating boiler plate code for a react-redux application. it also uses ejs to inject
