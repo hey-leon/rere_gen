@@ -29,6 +29,15 @@ export function <%- name %> (props) {
 
 
 /**
+ * TODO: specify the component default props of <%- name %>
+ * <%- name %> propTypes
+ */
+<%- name %>.defaultProps = {
+  //
+};
+
+
+/**
  * default export
  */
 export default <%- name %>;

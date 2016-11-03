@@ -32,6 +32,16 @@ Anchor.propTypes = {
 
 
 /**
+ * TODO: specify the component default props of <%- name %>
+ * <%- name %> propTypes
+ */
+Anchor.defaultProps = {
+  className: '',
+  children: '',
+};
+
+
+/**
  * default export
  */
 export default Anchor;

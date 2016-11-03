@@ -58,6 +58,15 @@ export class <%- name %> extends PureComponent {
 
 
 /**
+ * TODO: specify the component default props of <%- name %>
+ * <%- name %> propTypes
+ */
+<%- name %>.defaultProps = {
+  //
+};
+
+
+/**
  * default export
  */
 export default <%- name %>;
