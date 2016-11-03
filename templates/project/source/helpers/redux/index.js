@@ -16,7 +16,7 @@ export function createReducer(namespace, core) {
   // error on !core#${namespace}Init
   if (typeof core[`${namespace}Init`] !== 'function') {
     throw new Error(
-      'core#initialState must exist (and should return reducers initial state)'
+      `core#${namespace}Init must exist (and should return reducers initial state)`
     );
   }
 
