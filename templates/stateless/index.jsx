@@ -8,7 +8,7 @@ import styles from './styles';
 /**
  * @type {Function} <%- name %> Stateless Component
  */
-export function <%- name %> (props) {
+export function <%- name %>(props) {
   /**
    * TODO: specify design of <%- name %>
    * executes on render
