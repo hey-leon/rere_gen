@@ -8,39 +8,18 @@ import styles from './styles';
 /**
  * @type {PureComponent} <%- name %> PureComponent
  */
-export class <%- name %> extends PureComponent {
-  /**
-   * TODO: specify initial state and bindings of <%- name %>
-   * executes on instantiation
-   */
+export default class <%- name %> extends PureComponent {
   constructor(props) {
     super(props)
-    //
+    // TODO: specify initial state and bindings of <%- name %>
   }
 
-
-  /**
-   * TODO: specify setup of <%- name %>
-   * executes post mount
-   */
-  componentDidMount() {
-    //
+  componentWillUnmount() {
+    // TODO: specify cleanup of <%- name %>
   }
 
-
-  /**
-   * TODO: specify cleanup of <%- name %>
-   * executes pre unmount
-   */
-  componentWillMount() {
-    //
-  }
-
-  /**
-   * TODO: specify design of <%- name %>
-   * executes on render
-   */
   render() {
+    // TODO: specify design of <%- name %>
     return (
       <div />
     );
@@ -48,25 +27,11 @@ export class <%- name %> extends PureComponent {
 }
 
 
-/**
- * TODO: specify the component propTypes of <%- name %>
- * <%- name %> propTypes
- */
 <%- name %>.propTypes = {
-  //
+  // TODO: specify the component propTypes of <%- name %>
 };
 
 
-/**
- * TODO: specify the component default props of <%- name %>
- * <%- name %> propTypes
- */
 <%- name %>.defaultProps = {
-  //
+  // TODO: specify the component default props of <%- name %>
 };
-
-
-/**
- * default export
- */
-export default <%- name %>;
