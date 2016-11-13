@@ -9,12 +9,12 @@ import styles from './styles';
 /**
  * @type {Function} Home Stateless Component
  */
-export function Home (props) {
-  const { userFakeLogOut } = props;
+export default function Home(props) {
+  const { userInit } = props;
   return (
     <div className={styles.Home}>
       <h1>You are now in a authorised area</h1>
-      <Anchor onClick={userFakeLogOut} to="/Welcome">
+      <Anchor onClick={() => userInit()} to="/Welcome">
         Log Your Fake User Out...
       </Anchor>
     </div>
@@ -26,11 +26,5 @@ export function Home (props) {
  * Home propTypes
  */
 Home.propTypes = {
-  userFakeLogOut: PropTypes.func,
+  userInit: PropTypes.func,
 };
-
-
-/**
- * default export
- */
-export default Home;

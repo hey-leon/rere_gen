@@ -2,7 +2,7 @@
  * @module <%- name %> reducer
  */
 import { combineReducers } from 'redux-immutable';
-import user from './user/reducer';
+import user from './user';
 
 
 /**
@@ -13,23 +13,16 @@ const reducers = {
 }
 
 
-/*
+/**
  * @function the core reducer used by the application
  */
-const reducer = combineReducers(reducers);
+export default combineReducers(reducers);
 
 
 /**
- * default reducer
- */
-export default reducer;
-
-
-/**
- * 
  * Hot tips:
  * if you would like to enhance a reducer.
- * wraper the reducer fn and perform actions
+ * wrap the reducer fn and perform actions
  * e.g. save state of reducer persistantly
  * or log state.
  * 
@@ -43,13 +36,13 @@ export default reducer;
  * 
  * function loggingReducer(state, action) {
  *   const newState = reducer(state, action);
- *   console.log(newState.toJS());
+ *   console.log(newState);
  *   return newState;
  * }
  * 
  * function persistantReducer(state, action) {
  *   const newState = reducer(state, action);
- *   storage.set(namespace, newState.toJS());
+ *   storage.set(namespace, newState);
  *   return newState;
  * }
  * 

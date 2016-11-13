@@ -9,7 +9,7 @@ import styles from './styles';
 /**
  * @type {Function} Anchor Stateless Component
  */
-export function Anchor (props) {
+export default function Anchor(props) {
   const { className, children, ...rest } = props;
   return (
     <Link className={`${styles.Anchor} ${className}`} {...rest}>
@@ -32,16 +32,9 @@ Anchor.propTypes = {
 
 
 /**
- * TODO: specify the component default props of <%- name %>
- * <%- name %> propTypes
+ * Anchor defaultProps
  */
 Anchor.defaultProps = {
   className: '',
   children: '',
 };
-
-
-/**
- * default export
- */
-export default Anchor;

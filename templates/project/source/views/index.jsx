@@ -3,13 +3,13 @@
  */
 import React from 'react';
 import {
+  Router as ReactRouter,
   browserHistory,
   IndexRedirect,
-  Router,
   Route,
 } from 'react-router';
 
-import { verify } from 'helpers/router';
+import { verify } from 'libs/router';
 import store from 'logic/store';
 
 import Welcome from './Welcome';
@@ -31,26 +31,28 @@ const userLoggedIn = {
 /**
  * @param {Component} Router for managing the current activity
  */
-export default () => (
-  <Router history={browserHistory}>
-    <Route component={Root}>
+export default function Router() {
+  return (
+    <ReactRouter history={browserHistory}>
+      <Route component={Root}>
 
 
-      {/**
-        * authrousied routes
-        */}
-      <Route path="/" onEnter={verify(userLoggedIn)}>
-        <Route path="Home" component={Home} />
-        <IndexRedirect to="Home" />
+        {/**
+          * authrousied routes
+          */}
+        <Route path="/" onEnter={verify(userLoggedIn)}>
+          <Route path="Home" component={Home} />
+          <IndexRedirect to="Home" />
+        </Route>
+
+
+        {/**
+          * public routes
+          */}
+        <Route path="/Welcome" component={Welcome} />
+
+
       </Route>
-
-
-      {/**
-        * public routes
-        */}
-      <Route path="/Welcome" component={Welcome} />
-
-
-    </Route>
-  </Router>
-);
+    </ReactRouter>
+  );
+}

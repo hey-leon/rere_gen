@@ -9,12 +9,12 @@ import styles from './styles';
 /**
  * @type {Function} Welcome Stateless Component
  */
-export function Welcome (props) {
-  const { userFakeLogIn } = props;
+export default function Welcome(props) {
+  const { userMock } = props;
   return (
     <div className={styles.Welcome}>
       <h1>Hello World, from ReRe.</h1>
-      <Anchor onClick={userFakeLogIn} to="/Home">
+      <Anchor onClick={() => userMock()} to="/Home">
         Log A Fake User In...
       </Anchor>
     </div>
@@ -23,15 +23,8 @@ export function Welcome (props) {
 
 
 /**
- * TODO: specify the component propTypes of Welcome
  * Welcome propTypes
  */
 Welcome.propTypes = {
-  userFakeLogIn: PropTypes.func,
+  userMock: PropTypes.func,
 };
-
-
-/**
- * default export
- */
-export default Welcome;

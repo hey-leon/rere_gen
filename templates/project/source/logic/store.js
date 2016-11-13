@@ -2,32 +2,28 @@
  * @module <%- name %> store
  */
 import { createStore, applyMiddleware, compose } from 'redux';
-import thunkMiddleware from 'redux-thunk';
 import reducer from './reducer';
+import thunk from 'redux-thunk';
 
 
 /**
  * setup store enchancers:
- * - thunk
  * - redux dev tools
+ * - thunk
  */
-const { __REDUX_DEVTOOLS_EXTENSION__ : RDTE } = window;
-
-let devtools = f => f; 
+let composeEnhancers = compose;
 if (
-  process.env.NODE_ENV !== 'production'
-  && typeof RDTE === 'function'
-) {
-  devtools = RDTE();
+  process.env.NODE_ENV !== 'production' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  ) {
+  composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 }
-
-const thunk = applyMiddleware(thunkMiddleware);
 
 
 /**
  * compose enhancers
  */
-const enhancers = compose(thunk, devtools);
+const enhancers = composeEnhancers(applyMiddleware(thunk));
 
 
 /**

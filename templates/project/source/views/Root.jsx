@@ -5,8 +5,7 @@ import { PropTypes, PureComponent, cloneElement } from 'react';
 import { connect } from 'react-redux';
 import './styles';
 
-import * as actions from 'logic/actions';
-
+import actions from 'logic/actions';
 
 /**
  * this component is the sole connection to the redux
@@ -16,12 +15,9 @@ import * as actions from 'logic/actions';
  * projects of scale that subscribe in this fashion with
  * little performance losses (none of note yet).
  * 
- * @type {PureComponent} Connect PureComponent
+ * @type {PureComponent} Root PureComponent
  */
 export class Root extends PureComponent {
-  /**
-   * executes on render
-   */
   render() {
     const { children, ...rest } = this.props;
     return cloneElement(children, rest);
@@ -30,7 +26,7 @@ export class Root extends PureComponent {
 
 
 /**
- * Connect propTypes
+ * Root propTypes
  */
 Root.propTypes = {
   children: PropTypes.element,

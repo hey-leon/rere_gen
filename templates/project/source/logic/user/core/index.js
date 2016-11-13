@@ -5,7 +5,7 @@ import { Map, fromJS } from 'immutable';
 
 
 /**
- * @type {Map} initialState of user
+ * @type {Function} initialState of user
  */
 export function userInit() {
   return new Map();
@@ -13,30 +13,38 @@ export function userInit() {
 
 
 /**
- * @type {Function} stateSet example operation
+ * @type {Function} userMock mock a user on state
  */
-export function userSet(state, { newState }) {
-  return fromJS(newState);
+export function userMock() {
+  return fromJS({ _id: 1 });
 }
 
 
 /**
- * @type {Function} stateSet example operation
+ * @type {Function} userSet set user state
  */
-export function userSetIn(state, { namespace, segment }) {
-  const path =
-    typeof namespace === Array ? namespace : [namespace];
-
-  return state.setIn(path, fromJS(segment));
+export function userSet(state, { user }) {
+  return fromJS(user);
 }
 
 
 /**
- * @type {Function} stateSet example operation
+ * @type {Function} userSetIn set part of user state
  */
-export function userMergeIn(state, { namespace, segment }) {
+export function userSetIn(state, { field, value }) {
   const path =
-    typeof namespace === Array ? namespace : [namespace];
+    typeof field !== Array ? [field] : field;
 
-  return state.mergeDeepIn(path, fromJS(segment));
+  return state.setIn(path, fromJS(value));
+}
+
+
+/**
+ * @type {Function} userMergeIn merge part of user state
+ */
+export function userMergeIn(state, { field, value }) {
+  const path =
+    typeof field === Array ? field : [field];
+
+  return state.mergeDeepIn(path, fromJS(value));
 }

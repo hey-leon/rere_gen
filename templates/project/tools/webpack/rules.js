@@ -1,7 +1,5 @@
 const ExtractText = require("extract-text-webpack-plugin");
 
-// TODO add rule for sourcemaps
-
 
 const js = {
   test: /\.jsx?$/,
