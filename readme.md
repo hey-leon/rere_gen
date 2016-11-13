@@ -5,6 +5,8 @@
 ReRe is a cli tool to for generating boiler plate code for a react-redux application. it also uses ejs to inject
 options to customise boiler documentation (currently just injects the name of components/modules).
 
+[changelog here](./changelog.md)
+
 ## Installation
 
 ```sh
