@@ -1,5 +1,5 @@
 /**
- * @module <%- name %> reducer
+ * @module <%- name %> logic
  */
 import { createActions, createReducer } from 'redux-em';
 import * as core from './core';
